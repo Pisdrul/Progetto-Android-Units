@@ -1,20 +1,72 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
+import { ScrollView, StyleSheet, Text, View, Button, TouchableOpacity, Input} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, {Component, useState} from 'react';
+import Titolo from './Titolo.js';
+import Calories from './Calories.js';
+import styles from './commonStyles.js'
+const Stack = createNativeStackNavigator();
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      calNumber:0
+    }
+  }
+  render(){ 
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home}/>
+          <Stack.Screen name="Calories" component={Calories}/>
+          <Stack.Screen name="Water" component={Water}/>
+          <Stack.Screen name="Running" component={Running}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
+  }
+}
+function Home({navigation}){
+  return(
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Titolo/>
+          <Buttons navigation={navigation}></Buttons>
+   </View>
+  )
+}
+function Buttons({navigation}){
+  return(
+    <View style={styles.containerButtons}>
+          <TouchableOpacity style={styles.bigButton} onPress={() => navigation.navigate("Calories")}>
+            <Text style={styles.bigButtonText}>Calories</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.bigButton} onPress={() => navigation.navigate("Water")}>
+            <Text style={styles.bigButtonText}>Water</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.bigButton} onPress={() => navigation.navigate("Running")}>
+            <Text style={styles.bigButtonText}>Running</Text>
+          </TouchableOpacity>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function Water({navigation}){ 
+  return(
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Text style={styles.bigButtonText}>Go back</Text>
+      </TouchableOpacity>
+   </View>
+  )
+}
+function Running({navigation}){ 
+  return(
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Text style={styles.bigButtonText}>Go back</Text>
+      </TouchableOpacity>
+   </View>
+  )
+}
+export default App;
