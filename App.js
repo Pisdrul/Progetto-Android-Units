@@ -5,7 +5,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {Component, useState} from 'react';
 import Titolo from './Titolo.js';
 import Calories from './Calories.js';
-import styles from './commonStyles.js'
+import styles from './commonStyles.js';
+import BackButton from './BackButton.js';
 const Stack = createNativeStackNavigator();
 class App extends Component {
   constructor(){
@@ -54,18 +55,14 @@ function Buttons({navigation}){
 function Water({navigation}){ 
   return(
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Text style={styles.bigButtonText}>Go back</Text>
-      </TouchableOpacity>
+      <BackButton navigation={navigation}/>
    </View>
   )
 }
 function Running({navigation}){ 
   return(
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Text style={styles.bigButtonText}>Go back</Text>
-      </TouchableOpacity>
+      <BackButton navigation={navigation}/>
    </View>
   )
 }

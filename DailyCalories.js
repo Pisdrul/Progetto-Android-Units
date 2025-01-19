@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 const DailyCalories = ({calories,calorieGoal}) =>{
     let isOver = false;
@@ -17,12 +17,14 @@ const styles= StyleSheet.create({
         padding: 10,
         backgroundColor: 'white',
         borderRadius: 4,
-        margin: 30
+        margin: 30,
+        borderColor: 'black',
+        borderWidth: 2
     },
     calorieNums:{
         fontWeight: 'bold',
         fontSize: 60,
-        color: 'green',
+        color: 'green'
         },
     overCalories:{
         color: 'red'
