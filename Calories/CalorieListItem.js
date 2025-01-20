@@ -1,18 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet,TouchableHighlight} from 'react-native'
 
-const ListItem =({number, onPress})=>(
+const ListItem =({number, description, onPress})=>(
     <View style={styles.listRow}>
-        <Text style={styles.text}> {number}kcal</Text>
+        <View style={styles.textBoxes}>
+            <Text style={styles.textCal}> {number}kcal</Text>
+            <Text style={styles.textDesc}>{description}</Text>
+        </View>
         <View style={styles.buttonSide}>
-        <TouchableHighlight
-        onPress={onPress}
-        underlayColor='#efefef'
-        style={styles.button}>
-            <Text>
-                Add
-            </Text>
-        </TouchableHighlight>
         <TouchableHighlight
         onPress={onPress}
         underlayColor='#efefef'
@@ -34,8 +29,24 @@ const styles = StyleSheet.create({
        borderRadius: 4,
        marginRight: 5
     },
-    text: {
-        color: 'green'
+    textBoxes:{
+        flex:1,
+        flexDirection: 'row'
+    },
+    textCal: {
+        color: 'green',
+        padding: '5%',
+        borderColor: 'black',
+        borderWidth: 1
+    },
+    textDesc:{
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        borderColor: 'black',
+        padding: '5%',
+        minWidth: '55%',
+        borderWidth: 1,
+        position: 'relative',
     },
     complete: {
         color: 'green',

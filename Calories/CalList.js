@@ -1,15 +1,16 @@
 import React from 'react'
 import {ScrollView, View, Text} from 'react-native'
 import { StyleSheet } from 'react-native'
-import ListItem from './ListItem'
+import ListItem from './CalorieListItem'
+import { removeCalories } from './CaloriesData'
 
-const CalList = (caloriesList, deleteFunction) => {
-    const list = caloriesList.list
+const CalList = ({listOfCalories, listOfDescriptions}) => {
+    const list = listOfCalories
     let calList = list.map((value,i)=>{
         return(
-        <ListItem number={value} id={i} key={i} onPress={()=>deleteFunction(0) }></ListItem>
+        <ListItem number={value} description={listOfDescriptions[i]} id={i} key={i} onPress={()=>removeCalories(i) }></ListItem>
         )
-    }
+    } 
     )
     return(
         <View>

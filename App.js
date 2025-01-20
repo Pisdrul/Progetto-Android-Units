@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {Component, useState} from 'react';
 import Titolo from './Titolo.js';
-import Calories from './Calories.js';
+import Calories from './Calories/Calories.js';
 import styles from './commonStyles.js';
 import BackButton from './BackButton.js';
 const Stack = createNativeStackNavigator();
