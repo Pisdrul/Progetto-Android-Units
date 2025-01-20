@@ -3,7 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const calorieKey = '@calories_'
 
 export const getCalories = async () => {
-    try {
+    try { x
         const jsonValue = await AsyncStorage.getItem(calorieKey);
         return jsonValue != null ? JSON.parse(jsonValue) : []
     } catch (error){
