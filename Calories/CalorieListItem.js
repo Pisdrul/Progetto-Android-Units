@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         color: 'green',
         padding: '5%',
         borderColor: 'black',
+        width: '18%',
         borderWidth: 1
     },
     textDesc:{

@@ -2,6 +2,25 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const calorieKey = '@calories_'
 const descriptionKey = '@descriptionCal_'
+const goalKey = '@caloriesGoal_'
+export const getGoal = async () => {
+    try {
+        const jsonValue = await AsyncStorage.getItem(goalKey);
+        return jsonValue != null ? JSON.parse(jsonValue) : 1800
+    } catch (error){
+        console.error('Error retrieving goal:', error);
+        return [];
+    }
+}
+export const setGoalMemory = async (goal) => {
+    try {
+        const jsonValue = JSON.stringify(goal);
+        console.log("Changed goal")
+        await AsyncStorage.setItem(goalKey, jsonValue);
+    } catch (error) {
+        console.error('Error saving goal:', error);
+    }
+}
 export const getCalories = async () => {
     try {
         const jsonValue = await AsyncStorage.getItem(calorieKey);
@@ -68,6 +87,10 @@ export const removeCalories = async (caloriesIndex) => {
   };
 
 export const deleteAllData = async() =>{
-    AsyncStorage.clear()
+    saveCalories([]);
+    saveDescriptions([]);
     console.log("Cleared Data")
+}
+export const clear = async() =>{
+    AsyncStorage.clear()
 }

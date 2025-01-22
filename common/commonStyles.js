@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     borderColow: 'black',
-    borderWidth: 2
+    borderWidth: 2,
+    marginTop: 10
   },
   bigButton:{
     alignItems: 'center',
@@ -30,6 +31,18 @@ const styles = StyleSheet.create({
     padding: 10,
     fontFamily: 'Arial',
     fontWeight: 'bold'
+  },
+  redButton:{
+    alignItems: 'center',
+    alignItemsVertical: 'center',
+    backgroundColor:'rgba(255, 7, 7, 0.25)',
+    borderRadius: 4,
+    marginRight: 50,
+    marginLeft: 50,
+    height: 40,
+    marginTop: 20,
+    borderColor: 'black',
+    borderWidth: 2
   }
 });
 
