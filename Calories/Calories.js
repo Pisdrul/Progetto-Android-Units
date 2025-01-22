@@ -20,6 +20,7 @@ function Calories({navigation}){
       const descriptions = await getDescriptions();
       setCaloriesList(calories)
       setDescriptionList(descriptions)
+      console.log('retrieved data for calories!')
     } catch (e){
       console.error('Error retrieving calories: ', error);
     }
@@ -137,7 +138,8 @@ const rowStyle = StyleSheet.create({
     marginLeft: 10,
     borderColow: 'black',
     borderWidth: 2,
-    height: 50
+    height: 50,
+    minWidth: '23%'
   },
   bigButtonText:{
     padding: 13,

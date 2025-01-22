@@ -1,20 +1,23 @@
 import {StyleSheet, Text, View} from 'react-native';
 
-const DailyGoal = ({current,goal,isWater}) =>{
+const DailyGoal = ({current,goal,isWater,isRunning}) =>{
     let isOver = false;
     let string = '';
-    let cur = 'calories';
+    let cur = 'Daily calories';
     if(current>goal){
         isOver = true;
     }
     if(isWater){
         string = 'L'
-        cur = 'water'
+        cur = 'Daily water'
+    } else if(isRunning){
+        string = 'Km'
+        cur = 'Weekly running'
     }
     return(
     <View style={styles.container}>
-        <Text style={styles.dailyCal}>Daily {cur}:</Text>
-        <Text style={styles.nums}><Text style={(isOver && !isWater) && styles.overGoal }>{current}{string}</Text>/{goal}{string}</Text>
+        <Text style={styles.dailyCal}>{cur}:</Text>
+        <Text style={styles.nums}><Text style={(isOver && !isWater && !isRunning) && styles.overGoal }>{current}</Text>/{goal}{string}</Text>
     </View>
     )
 }

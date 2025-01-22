@@ -1,24 +1,30 @@
 import React from 'react'
 import { View, Text, StyleSheet,TouchableHighlight} from 'react-native'
 
-const ListItem =({number, description, onPress})=>(
-    <View style={styles.listRow}>
-        <View style={styles.textBoxes}>
-            <Text style={styles.textCal}> {number}kcal</Text>
-            <Text style={styles.textDesc}>{description}</Text>
+const ListItem =({number, descriptionOrDate, onPress, string, isRunning})=>{
+    let dateString = ''
+    if(isRunning){
+        dateString = 'Date: '
+    }
+    return(
+        <View style={styles.listRow}>
+            <View style={styles.textBoxes}>
+                <Text style={styles.text1}>{number} {string}</Text>
+                <Text style={styles.text2}>{dateString}{descriptionOrDate}</Text>
+            </View>
+            <View style={styles.buttonSide}>
+            <TouchableHighlight
+            onPress={onPress}
+            underlayColor='#efefef'
+            style={styles.button}>
+                <Text>
+                    Delete
+                </Text>
+            </TouchableHighlight>
+            </View>
         </View>
-        <View style={styles.buttonSide}>
-        <TouchableHighlight
-        onPress={onPress}
-        underlayColor='#efefef'
-        style={styles.button}>
-            <Text>
-                Delete
-            </Text>
-        </TouchableHighlight>
-        </View>
-    </View>
-)
+        )
+    }
 
 const styles = StyleSheet.create({
     button: {
@@ -33,19 +39,21 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'row'
     },
-    textCal: {
+    text1: {
         color: 'green',
-        padding: '5%',
+        alignContent: 'center',
         borderColor: 'black',
-        width: '18%',
-        borderWidth: 1
+        width: '40%',
+        borderWidth: 1,
+        position: 'relative',
+        padding: '4%'
     },
-    textDesc:{
+    text2:{
         fontFamily: 'Arial',
         fontWeight: 'bold',
         borderColor: 'black',
         padding: '5%',
-        minWidth: '55%',
+        width: '120%',
         borderWidth: 1,
         position: 'relative',
     },

@@ -1,7 +1,7 @@
 import React from 'react'
-import {ScrollView, View, Text} from 'react-native'
+import {ScrollView, View} from 'react-native'
 import { StyleSheet } from 'react-native'
-import ListItem from './CalorieListItem'
+import ListItem from '../common/ListItem'
 import { removeCalories, getCalories, getDescriptions } from './CaloriesData'
 
 const CalList = ({listOfCalories, listOfDescriptions, functionCal, functionDesc, retrieve}) => {
@@ -16,7 +16,7 @@ const CalList = ({listOfCalories, listOfDescriptions, functionCal, functionDesc,
     } 
     let calList = list.map((value,i)=>{
         return(
-        <ListItem number={value} description={listOfDescriptions[i]} id={i} key={i} onPress={()=>deleteCalories(i) }></ListItem>
+        <ListItem number={value} descriptionOrDate={listOfDescriptions[i]} id={i} key={i} onPress={()=>deleteCalories(i)} string={"kcal"}></ListItem>
         )
     }
     

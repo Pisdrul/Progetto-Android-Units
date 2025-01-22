@@ -17,14 +17,14 @@ const styles = StyleSheet.create({
        marginTop: 150,
        margin:30,
        borderRadius: 10,
-       backgroundColor: 'rgba(27, 16, 27, 0.25)',
+       alignContent: 'center', 
    },
    headerText:{
        textAlign: 'center',
        fontSize: 100,
-       color: 'rgba(255, 0, 0, 0.91)',
+       color: 'rgba(0, 0, 0, 0.91)',
        fontWeight: 'bold',
-       fontFamily: 'Comic Sans'
+       fontFamily: 'sans-serif'
    }
 })
 

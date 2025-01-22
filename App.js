@@ -7,7 +7,7 @@ import Titolo from './Titolo.js';
 import Calories from './Calories/Calories.js';
 import Water from './Water/Water.js'
 import styles from './common/commonStyles.js';
-import BackButton from './BackButton.js';
+import Running from './Running/Running.js'
 import { clear } from './Calories/CaloriesData.js';
 const Stack = createNativeStackNavigator();
 class App extends Component {
@@ -58,11 +58,5 @@ function Buttons({navigation}){
 }
 
 
-function Running({navigation}){ 
-  return(
-    <View style={styles.container}>
-      <BackButton navigation={navigation}/>
-   </View>
-  )
-}
+
 export default App;
