@@ -1,9 +1,9 @@
 import { ScrollView, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
-import DailyGoal from '../common/DailyGoal.js';
+import DailyGoal from '../../commonComponents/DailyGoal.js';
 import React, { useState } from 'react';
-import styles from '../common/commonStyles.js'
+import styles from '../../commonComponents/commonStyles.js'
 import CalList from './CalList.js'
-import BackButton from '../BackButton.js';
+import BackButton from '../../commonComponents/BackButton.js';
 import {getCalories, addCalories, deleteAllData, getDescriptions, setGoalMemory, getGoal} from './CaloriesData.js';
 
 function Calories({navigation}){

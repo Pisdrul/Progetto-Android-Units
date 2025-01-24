@@ -1,9 +1,9 @@
 import { ScrollView, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
-import DailyGoal from '../common/DailyGoal.js';
+import DailyGoal from '../../commonComponents/DailyGoal.js';
 import React, { useState } from 'react';
-import styles from '../common/commonStyles.js'
-import BackButton from '../BackButton.js';
-import RunningList from './RunningList.js';
+import styles from '../../commonComponents/commonStyles.js'
+import BackButton from '../../commonComponents/BackButton.js';
+import RunList from './RunList.js';
 import { setGoalMemory, getGoal, getRunning, getDates, addEntry, deleteAllData } from './RunningData.js';
 function Running({navigation}){
     const [addedVal, setAddedVal] = useState(0);
@@ -72,7 +72,7 @@ function Running({navigation}){
                 />  
             </View>
         <ScrollView>
-            <RunningList listOfRuns={kmList} listOfDates={fixDates()} functionRun={setKmList} functionDates={setDateList} retrieve ={retrieveData}></RunningList>
+            <RunList listOfRuns={kmList} listOfDates={fixDates()} functionRun={setKmList} functionDates={setDateList} retrieve ={retrieveData}></RunList>
         </ScrollView>
         <TextInput style={styles.inputBox}
             keyboardType={'numeric'}

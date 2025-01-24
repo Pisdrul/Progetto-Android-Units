@@ -1,10 +1,10 @@
 import React from 'react'
 import {ScrollView, View} from 'react-native'
 import { StyleSheet } from 'react-native'
-import ListItem from '../common/ListItem'
+import ListItem from '../../commonComponents/ListItem'
 import { getRunning, getDates, deleteEntry } from './RunningData'
 
-const RunningList = ({listOfRuns, listOfDates, functionRun, functionDates, retrieve}) => {
+const RunList = ({listOfRuns, listOfDates, functionRun, functionDates, retrieve}) => {
     const list = listOfRuns
     async function deleteRun(index){
         deleteEntry(index)
@@ -36,4 +36,4 @@ const styled = StyleSheet.create({
         fontSize: 15
     }
 })
-export default RunningList
+export default RunList

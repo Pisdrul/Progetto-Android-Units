@@ -1,14 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View, Button, TouchableOpacity, Input} from 'react-native';
+import { Text, View,TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {Component, useState} from 'react';
 import Titolo from './Titolo.js';
-import Calories from './Calories/Calories.js';
-import Water from './Water/Water.js'
-import styles from './common/commonStyles.js';
-import Running from './Running/Running.js'
-import { clear } from './Calories/CaloriesData.js';
+import Calories from './Pages/Calories/Calories.js';
+import Water from './Pages/Water/Water.js'
+import styles from './commonComponents/commonStyles.js';
+import Running from './Pages/Running/Running.js'
+import { clear } from './Pages/Calories/CaloriesData.js';
 const Stack = createNativeStackNavigator();
 class App extends Component {
   constructor(){

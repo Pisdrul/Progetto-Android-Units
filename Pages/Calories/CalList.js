@@ -1,7 +1,7 @@
 import React from 'react'
 import {ScrollView, View} from 'react-native'
 import { StyleSheet } from 'react-native'
-import ListItem from '../common/ListItem'
+import ListItem from '../../commonComponents/ListItem'
 import { removeCalories, getCalories, getDescriptions } from './CaloriesData'
 
 const CalList = ({listOfCalories, listOfDescriptions, functionCal, functionDesc, retrieve}) => {

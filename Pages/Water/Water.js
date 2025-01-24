@@ -1,8 +1,8 @@
 import { ScrollView, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
-import DailyGoal from '../common/DailyGoal.js';
+import DailyGoal from '../../commonComponents/DailyGoal.js';
 import React, { useState } from 'react';
-import styles from '../common/commonStyles.js'
-import BackButton from '../BackButton.js';
+import styles from '../../commonComponents/commonStyles.js'
+import BackButton from '../../commonComponents/BackButton.js';
 import { getWater, addWater, undo, deleteAllData } from './WaterData.js';
 
 function Water({navigation}){
